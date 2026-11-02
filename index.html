@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janamora High School — Management Portal</title>
+<style>
+:root{--navy:#172554;--blue:#3157c8;--sky:#eaf0ff;--bg:#f4f6fb;--ink:#182033;--muted:#748096;--line:#e6eaf2;--green:#16845b;--amber:#b7791f;--red:#c2414b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,Arial,sans-serif}
+.shell{display:flex;min-height:100vh}.side{width:245px;background:var(--navy);color:#fff;padding:26px 18px;flex-shrink:0}.brand{font-size:22px;font-weight:800;letter-spacing:.2px;margin:0 10px 5px}.tag{color:#bac8ee;font-size:12px;margin:0 10px 32px}.navlabel{font-size:10px;color:#8fa4dc;font-weight:800;letter-spacing:1.5px;margin:22px 12px 8px}.nav button{width:100%;border:0;background:transparent;color:#dbe5ff;text-align:left;padding:12px;border-radius:10px;margin:3px 0;font:inherit;cursor:pointer}.nav button.active,.nav button:hover{background:#2b3e78;color:#fff}.nav button span{display:inline-block;width:28px}.main{flex:1;min-width:0}.top{height:76px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px}.top small{color:var(--muted)}.avatar{background:var(--sky);color:var(--blue);font-weight:800;border-radius:50%;width:38px;height:38px;display:grid;place-items:center}.content{max-width:1250px;margin:auto;padding:30px 34px 50px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}.heading h1{font-size:26px;margin:0 0 4px}.heading p{margin:0;color:var(--muted)}.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:10px 15px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.94)}.btn.secondary{background:white;color:var(--blue);border:1px solid #d9e1f5}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}.card,.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px}.card .label{color:var(--muted);font-size:13px}.value{font-size:29px;font-weight:800;margin:7px 0 2px}.hint{font-size:12px;color:var(--green)}.panel h2{font-size:17px;margin:0 0 16px}.grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:var(--muted);font-size:12px;font-weight:700;padding:11px 10px;border-bottom:1px solid var(--line)}td{padding:13px 10px;border-bottom:1px solid #f0f2f7;font-size:13px}tr:last-child td{border-bottom:0}.badge{display:inline-block;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:700;background:#e9f7f0;color:var(--green)}.badge.warn{background:#fff5df;color:var(--amber)}.badge.low{background:#fff0f0;color:var(--red)}.barrow{display:flex;align-items:center;gap:12px;margin:15px 0;font-size:13px}.barlabel{width:78px;color:var(--muted)}.bar{height:9px;background:#edf0f6;border-radius:9px;flex:1;overflow:hidden}.bar i{display:block;height:100%;background:var(--blue);border-radius:9px}.barval{width:32px;text-align:right;font-weight:700}.search{width:min(260px,100%);padding:10px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;outline:none}.toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}.hidden{display:none}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.field input,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}.field.full{grid-column:1/-1}.modal{position:fixed;inset:0;background:#10182b88;display:none;align-items:center;justify-content:center;padding:18px;z-index:5}.modal.show{display:flex}.dialog{background:white;border-radius:16px;padding:23px;width:min(520px,100%);max-height:90vh;overflow:auto}.dialoghead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.dialoghead h2{margin:0;font-size:20px}.close{border:0;background:#f0f2f7;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer}.actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.empty{color:var(--muted);text-align:center;padding:25px}.notice{padding:12px 14px;background:#eef3ff;color:#3551a1;border-radius:10px;font-size:12px;margin-top:18px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.side{width:205px}.content{padding:24px 20px}}
+@media(max-width:620px){.shell{display:block}.side{width:100%;padding:15px}.brand{display:inline-block}.tag{display:inline-block;margin:0 0 0 8px}.nav{display:flex;overflow-x:auto;gap:5px}.navlabel{display:none}.nav button{white-space:nowrap;width:auto;padding:9px}.nav button span{width:auto;margin-right:5px}.top{height:58px;padding:0 17px}.content{padding:20px 14px}.heading{align-items:center}.heading h1{font-size:22px}.cards{gap:10px}.card{padding:14px}.value{font-size:24px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">✦ Janamora High School</div><div class="tag">School management portal</div>
+  <div class="navlabel">WORKSPACE</div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard"><span>▦</span>Dashboard</button>
+    <button data-page="students"><span>♙</span>Students</button>
+    <button data-page="teachers"><span>♧</span>Teachers</button>
+    <button data-page="results"><span>▤</span>Results</button>
+  </nav>
+  <div class="notice">Demo project · Sample records only<br>Data stays in this browser.</div>
+</aside>
+<main class="main">
+  <header class="top"><div><strong>School Admin</strong><br><small>Academic year 2026/2027</small></div><div class="avatar">SA</div></header>
+  <section class="content">
+    <div class="heading"><div><h1 id="pageTitle">Dashboard</h1><p id="pageSub">Overview of your school at a glance.</p></div><button class="btn" id="quickAdd">＋ Add student</button></div>
+    <section id="dashboardPage">
+      <div class="cards">
+        <div class="card"><div class="label">Total students</div><div class="value" id="studentCount">0</div><div class="hint">Registered learners</div></div>
+        <div class="card"><div class="label">Total teachers</div><div class="value" id="teacherCount">0</div><div class="hint">Teaching staff</div></div>
+        <div class="card"><div class="label">Results recorded</div><div class="value" id="resultCount">0</div><div class="hint">Subject scores</div></div>
+        <div class="card"><div class="label">Average score</div><div class="value" id="averageScore">—</div><div class="hint">Across recorded results</div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel"><h2>Recently registered students</h2><div class="tablewrap"><table><thead><tr><th>STUDENT</th><th>GRADE</th><th>STUDENT ID</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+        <div class="panel"><h2>Results overview</h2><div id="gradeBars"></div></div>
+      </div>
+    </section>
+    <section id="studentsPage" class="hidden">
+      <div class="panel"><div class="toolbar"><input class="search" id="studentSearch" placeholder="Search students…"><button class="btn" id="addStudent">＋ Add student</button></div><div class="tablewrap"><table><thead><tr><th>ID</th><th>FULL NAME</th><th>GRADE</th><th>EMAIL</th><th>ACTION</th></tr></thead><tbody id="studentRows"></tbody></table></div></div>
+    </section>
+    <section id="teachersPage" class="hidden">
+      <div class="panel"><div class="toolbar"><input class="search" id="teacherSearch" placeholder="Search teachers…"><button class="btn" id="addTeacher">＋ Add teacher</button></div><div class="tablewrap"><table><thead><tr><th>ID</th><th>FULL NAME</th><th>SUBJECT</th><th>EMAIL</th><th>ACTION</th></tr></thead><tbody id="teacherRows"></tbody></table></div></div>
+    </section>
+    <section id="resultsPage" class="hidden">
+      <div class="panel"><div class="toolbar"><input class="search" id="resultSearch" placeholder="Search results…"><button class="btn" id="addResult">＋ Add result</button></div><div class="tablewrap"><table><thead><tr><th>STUDENT</th><th>SUBJECT</th><th>GRADE</th><th>SCORE</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="resultRows"></tbody></table></div></div>
+    </section>
+  </section>
+</main>
+</div>
+<div class="modal" id="modal"><div class="dialog"><div class="dialoghead"><h2 id="modalTitle">Add record</h2><button class="close" id="closeModal">×</button></div><form id="recordForm"><div class="formgrid" id="formFields"></div><div class="actions"><button type="button" class="btn secondary" id="cancelModal">Cancel</button><button class="btn" type="submit">Save record</button></div></form></div></div>
+<script>
+const seed = {
+ students:[
+  {id:"ST-001",name:"Abel Tadesse",grade:"Grade 10",email:"abel@example.test"},
+  {id:"ST-002",name:"Hana Bekele",grade:"Grade 9",email:"hana@example.test"},
+  {id:"ST-003",name:"Mikiros Alemu",grade:"Grade 11",email:"mikiros@example.test"},
+  {id:"ST-004",name:"Sara Worku",grade:"Grade 10",email:"sara@example.test"}
+ ],
+ teachers:[
+  {id:"TC-001",name:"Marta Girma",subject:"Mathematics",email:"marta@example.test"},
+  {id:"TC-002",name:"Dawit Kebede",subject:"English",email:"dawit@example.test"},
+  {id:"TC-003",name:"Liya Abebe",subject:"Biology",email:"liya@example.test"}
+ ],
+ results:[
+  {studentId:"ST-001",subject:"Mathematics",grade:"Grade 10",score:86},
+  {studentId:"ST-002",subject:"English",grade:"Grade 9",score:74},
+  {studentId:"ST-003",subject:"Biology",grade:"Grade 11",score:92},
+  {studentId:"ST-004",subject:"Mathematics",grade:"Grade 10",score:58},
+  {studentId:"ST-001",subject:"English",grade:"Grade 10",score:79}
+ ]
+};
+let data;
+try { data=JSON.parse(localStorage.getItem("edutrack-data")) || seed; } catch(e){data=seed;}
+const $=id=>document.getElementById(id);
+function persist(){localStorage.setItem("edutrack-data",JSON.stringify(data));render();}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function average(){return data.results.length?Math.round(data.results.reduce((a,r)=>a+Number(r.score),0)/data.results.length):null;}
+function render(){
+ $("studentCount").textContent=data.students.length;$("teacherCount").textContent=data.teachers.length;$("resultCount").textContent=data.results.length;
+ $("averageScore").textContent=average()===null?"—":average()+"%";
+ $("recentRows").innerHTML=data.students.slice(-4).reverse().map(s=>`<tr><td>${esc(s.name)}</td><td>${esc(s.grade)}</td><td>${esc(s.id)}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">No students yet.</td></tr>';
+ const buckets=[{l:"Excellent · 80–100",n:data.results.filter(r=>r.score>=80).length},{l:"Good · 60–79",n:data.results.filter(r=>r.score>=60&&r.score<80).length},{l:"Needs support · 0–59",n:data.results.filter(r=>r.score<60).length}];
+ $("gradeBars").innerHTML=buckets.map(b=>`<div class="barrow"><span class="barlabel">${b.l}</span><div class="bar"><i style="width:${data.results.length?b.n/data.results.length*100:0}%"></i></div><span class="barval">${b.n}</span></div>`).join("")||'<p class="empty">No results recorded.</p>';
+ drawStudents();drawTeachers();drawResults();
+}
+function drawStudents(q=""){let rows=data.students.filter(s=>(s.name+s.id+s.grade+s.email).toLowerCase().includes(q.toLowerCase()));$("studentRows").innerHTML=rows.map(s=>`<tr><td>${esc(s.id)}</td><td>${esc(s.name)}</td><td>${esc(s.grade)}</td><td>${esc(s.email)}</td><td><button class="btn secondary" onclick="removeRecord('students','${s.id}')">Delete</button></td></tr>`).join("")||'<tr><td colspan="5" class="empty">No matching students.</td></tr>';}
+function drawTeachers(q=""){let rows=data.teachers.filter(t=>(t.name+t.id+t.subject+t.email).toLowerCase().includes(q.toLowerCase()));$("teacherRows").innerHTML=rows.map(t=>`<tr><td>${esc(t.id)}</td><td>${esc(t.name)}</td><td>${esc(t.subject)}</td><td>${esc(t.email)}</td><td><button class="btn secondary" onclick="removeRecord('teachers','${t.id}')">Delete</button></td></tr>`).join("")||'<tr><td colspan="5" class="empty">No matching teachers.</td></tr>';}
+function drawResults(q=""){let rows=data.results.map((r,i)=>({...r,index:i,student:data.students.find(s=>s.id===r.studentId)?.name||"Unknown student"})).filter(r=>(r.student+r.subject+r.grade).toLowerCase().includes(q.toLowerCase()));$("resultRows").innerHTML=rows.map(r=>`<tr><td>${esc(r.student)}</td><td>${esc(r.subject)}</td><td>${esc(r.grade)}</td><td>${r.score}%</td><td><span class="badge ${r.score<60?"low":r.score<80?"warn":""}">${r.score>=80?"Excellent":r.score>=60?"Pass":"Needs support"}</span></td><td><button class="btn secondary" onclick="removeRecord('results',${r.index})">Delete</button></td></tr>`).join("")||'<tr><td colspan="6" class="empty">No matching results.</td></tr>';}
+function removeRecord(type,key){if(!confirm("Delete this record?"))return;if(type==="results")data.results.splice(key,1);else data[type]=data[type].filter(x=>x.id!==key);persist();}
+const pages={dashboard:["Dashboard","Overview of your school at a glance."],students:["Students","Register and manage student information."],teachers:["Teachers","Manage teaching staff and subjects."],results:["Results","Record and review student scores."]};
+function showPage(page){Object.keys(pages).forEach(p=>$(p+"Page").classList.toggle("hidden",p!==page));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));$("pageTitle").textContent=pages[page][0];$("pageSub").textContent=pages[page][1];$("quickAdd").style.display=page==="dashboard"?"inline-block":"none";}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+["student","teacher","result"].forEach(type=>$(type+"Search").addEventListener("input",e=>type==="student"?drawStudents(e.target.value):type==="teacher"?drawTeachers(e.target.value):drawResults(e.target.value)));
+const modal=$("modal");let currentType="";
+function field(name,label,type="text",opts=[]){let control=type==="select"?`<select name="${name}" required>${opts.map(o=>`<option>${esc(o)}</option>`).join("")}</select>`:`<input name="${name}" type="${type}" ${type==="number"?'min="0" max="100"':''} required>`;return `<div class="field"><label>${label}</label>${control}</div>`;}
+function openForm(type){currentType=type;$("modalTitle").textContent=type==="students"?"Register student":type==="teachers"?"Add teacher":"Record student result";let fields="";
+if(type==="students")fields=field("name","Full name")+field("grade","Grade","select",["Grade 7","Grade 8","Grade 9","Grade 10","Grade 11","Grade 12"])+field("email","Email","email");
+if(type==="teachers")fields=field("name","Full name")+field("subject","Subject")+field("email","Email","email");
+if(type==="results")fields=field("studentId","Student","select",data.students.map(s=>s.id+" — "+s.name))+field("subject","Subject")+field("grade","Grade","select",["Grade 7","Grade 8","Grade 9","Grade 10","Grade 11","Grade 12"])+field("score","Score (0–100)","number");
+$("formFields").innerHTML=fields;modal.classList.add("show");}
+function closeForm(){modal.classList.remove("show");$("recordForm").reset();}
+$("addStudent").onclick=()=>openForm("students");$("quickAdd").onclick=()=>openForm("students");$("addTeacher").onclick=()=>openForm("teachers");$("addResult").onclick=()=>data.students.length?openForm("results"):alert("Please register a student first.");
+$("closeModal").onclick=closeForm;$("cancelModal").onclick=closeForm;modal.addEventListener("click",e=>{if(e.target===modal)closeForm();});
+$("recordForm").addEventListener("submit",e=>{e.preventDefault();let f=Object.fromEntries(new FormData(e.target));if(currentType==="students"){f.id="ST-"+String(Date.now()).slice(-6);data.students.push(f);}else if(currentType==="teachers"){f.id="TC-"+String(Date.now()).slice(-6);data.teachers.push(f);}else{let id=f.studentId.split(" — ")[0];data.results.push({studentId:id,subject:f.subject,grade:f.grade,score:Number(f.score)});}closeForm();persist();});
+render();showPage("dashboard");
+</script>
+</body></html>
